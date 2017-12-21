@@ -7,7 +7,7 @@ from pyspark.ml.feature import HashingTF, IDF, Tokenizer, StopWordsRemover, Rege
 
 
 # Explicitly add SPARK_HOME environment variable so that findspark works properly
-os.environ['SPARK_HOME'] = '/home/pratyus/spark/spark-2.2.0-bin-hadoop2.7'
+#os.environ['SPARK_HOME'] = '/home/pratyus/spark/spark-2.2.0-bin-hadoop2.7'
 
 # findspark package is initialized to find the default installation location of pyspark and link with it
 findspark.init()
@@ -51,9 +51,9 @@ def withArrToStrColumn(table, array_col, str_col):
 #############
 
 # Read the patents, assignees and patent_assignees tables to form respective dataframes.
-patents = readtsv('/home/pratyus/Downloads/data/patent.tsv')
-assignees = readtsv('/home/pratyus/Downloads/data/assignee.tsv')
-patent_assignee = readtsv('/home/pratyus/Downloads/data/patent_assignee.tsv')
+patents = readtsv('./data/patent.tsv')
+assignees = readtsv('./data/assignee.tsv')
+patent_assignee = readtsv('./data/patent_assignee.tsv')
 
 #####################
 #PATENT SANITIZATION#
