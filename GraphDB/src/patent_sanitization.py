@@ -120,9 +120,9 @@ patents_assignee_10 = patent_assignee.join(patents_10, patents_10.id == patent_a
 #DATA EXPORT#
 #############
 
-writecsv(patents_assignee_10, 'patents_assignee_edges')
-writecsv(patents_10, 'patents_vertices')
-writecsv(assignee_4, 'assignee_vertices')
+writecsv(patents_assignee_10, 'cleaned_patent_vertices_edges')
+writecsv(patents_10, 'cleaned_patents_vertices')
+writecsv(assignee_4, 'cleaned_assignee_vertices')
 
 
 
