@@ -20,7 +20,7 @@ sqlContext = SQLContext(sc)
 ##################
 
 # Reads a .tsv file into a pySpark dataframe.
-def readtsv(filename, sep='\t', header=True):
+def readcsv(filename, sep=',', header=True):
     data = sqlContext.read.csv('./data/' + str(filename) + '.tsv', sep, header)
     return data
 
@@ -40,9 +40,9 @@ def writecsv(table, filename, header=False, mode='overwrite'):
 #############
 
 # Read the patents, assignees and patent_assignees tables to form respective dataframes.
-patents = readtsv('patents_vertices')
-assignees = readtsv('assignees_vertices')
-patents_assignees = readtsv('patents_assignee_edges')
+patents = readcsv('cleaned_patent_vertices')
+assignees = readcsv('cleaned_assignee_vertices')
+patents_assignees = readcsv('cleaned_patent_vertices_edges')
 
 ##########################
 #TREND ANALYSIS - BY YEAR#
