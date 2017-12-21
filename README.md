@@ -3,9 +3,9 @@
 ## Data:
 
 1. Please download the following files from http://www.patentsview.org/download/:
-..* patents.zip - [link](http://www.patentsview.org/data/20170808/patent.zip)
-..* assignees.zip - [link](http://www.patentsview.org/data/20170808/assignee.zip)
-..* patent\_assignee.zip - [link](http://www.patentsview.org/data/20170808/patent_assignee.zip)
+  * patents.zip - [link](http://www.patentsview.org/data/20170808/patent.zip)
+  * assignees.zip - [link](http://www.patentsview.org/data/20170808/assignee.zip)
+  * patent\_assignee.zip - [link](http://www.patentsview.org/data/20170808/patent_assignee.zip)
 
 2. Unzip the downloaded files to a sub-folder named 'data'.
 
