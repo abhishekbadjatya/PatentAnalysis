@@ -10,3 +10,5 @@
 2. Unzip the downloaded files to a sub-folder named 'data'.
 
 3. Ensure that the 'SPARK_HOME' environment variable is set to the Spark installation directory.
+
+4. Ensure that the Graphene docker images are running for the address localhost:8010
