@@ -21,8 +21,8 @@ sqlContext = SQLContext(sc)
 ##################
 
 # Reads a .tsv file into a pySpark dataframe.
-def readtsv(filepath, sep='\t', header=True):
-    data = sqlContext.read.csv(filepath, sep, header)
+def readtsv(filename, sep='\t', header=True):
+    data = sqlContext.read.csv('./data/' + str(filename) + '.tsv', sep, header)
     return data
 
 
@@ -33,7 +33,7 @@ def selectColumns(table, columns):
 
 # Writes the dataframe to csv.
 def writecsv(table, filename, header=False, mode='overwrite'):
-    table.write.csv(str(filename)+'.csv', header=header, mode=mode)
+    table.write.csv('./data/' + str(filename) + '.csv', header=header, mode=mode)
 
 # Creates a new string column from by concatenating elements from an array column
 def withArrToStrColumn(table, array_col, str_col):
@@ -51,9 +51,9 @@ def withArrToStrColumn(table, array_col, str_col):
 #############
 
 # Read the patents, assignees and patent_assignees tables to form respective dataframes.
-patents = readtsv('./data/patent.tsv')
-assignees = readtsv('./data/assignee.tsv')
-patent_assignee = readtsv('./data/patent_assignee.tsv')
+patents = readtsv('patent')
+assignees = readtsv('assignee')
+patent_assignee = readtsv('patent_assignee')
 
 #####################
 #PATENT SANITIZATION#
