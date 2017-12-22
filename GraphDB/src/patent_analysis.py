@@ -21,7 +21,7 @@ sqlContext = SQLContext(sc)
 
 # Reads a .tsv file into a pySpark dataframe.
 def readcsv(filename, sep=',', header=True):
-    data = sqlContext.read.csv('./data/' + str(filename) + '.tsv', sep, header)
+    data = sqlContext.read.csv('../data/' + str(filename) + '.tsv', sep=sep, header=header)
     return data
 
 
@@ -61,7 +61,7 @@ patents_year_df = patents_year_df.sort_values(by='year', ascending=True)
 sns.set_style("darkgrid")
 sns.barplot(x='year', y='count', data=patents_year_df)
 plt.xticks(rotation=90, fontsize=7)
-plt.savefig('./plots/year_dist.png')
+plt.savefig('../plots/year_dist.png')
 
 ###########################
 #TREND ANALYSIS - BY MONTH#
@@ -83,7 +83,7 @@ patents_month_df = patents_month_df.sort_values(by='year_month', ascending=True)
 sns.set_style("darkgrid")
 plt.plot('year_month','count', data=patents_month_df)
 plt.xlabel('Time')
-plt.savefig('./plots/month_dist.png')
+plt.savefig('../plots/month_dist.png')
 
 #######################
 #ASSIGNEE DISTRIBUTION#
@@ -108,7 +108,7 @@ patents_assignees_top10 = patents_assignees_df.head(10)
 sns.set_style("darkgrid")
 plt.barplot(x='Assignee', y='count', data=patents_assignees_top10)
 plt.xlabel('Assignee')
-plt.savefig('./plots/assignee_dist.png')
+plt.savefig('../plots/assignee_dist.png')
 
 
 
