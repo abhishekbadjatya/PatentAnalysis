@@ -22,7 +22,7 @@ sqlContext = SQLContext(sc)
 
 # Reads a .tsv file into a pySpark dataframe.
 def readtsv(filename, sep='\t', header=True):
-    data = sqlContext.read.csv('./data/' + str(filename) + '.tsv', sep, header)
+    data = sqlContext.read.csv('../data/' + str(filename) + '.tsv', sep, header)
     return data
 
 
@@ -33,7 +33,7 @@ def selectColumns(table, columns):
 
 # Writes the dataframe to csv.
 def writecsv(table, filename, header=False, mode='overwrite'):
-    table.write.csv('./data/' + str(filename) + '.csv', header=header, mode=mode)
+    table.write.csv('../data/' + str(filename) + '.csv', header=header, mode=mode)
 
 # Creates a new string column from by concatenating elements from an array column
 def withArrToStrColumn(table, array_col, str_col):
@@ -119,6 +119,10 @@ patents_assignee_10 = patent_assignee.join(patents_10, patents_10.id == patent_a
 #############
 #DATA EXPORT#
 #############
+
+patents_assignee_10 = patents_assignee_10.select('patent_id', 'assignee_id')
+patents_10 = patents_10.select('id', 'year', 'month', 'day')
+assignee_4 = assignee_4.select('id', 'Assignee')
 
 writecsv(patents_assignee_10, 'cleaned_patent_vertices_edges')
 writecsv(patents_10, 'cleaned_patents_vertices')
