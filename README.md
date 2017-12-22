@@ -1,4 +1,5 @@
 # PatentAnalysis
+Team no. - 201712-31
 
 ## Data:
 
@@ -12,3 +13,16 @@
 3. Ensure that the 'SPARK_HOME' environment variable is set to the Spark installation directory.
 
 4. Ensure that the Graphene docker images are running for the address localhost:8010
+
+
+## Code Structure
+
+    ├── data                   # I/O data required for the scripts.
+    ├── src                    # Scripts that comprise the project.
+    
+## Order of Executing scripts:
+
+1. src\\patents\_sanitization.py
+2. src\\patents\_analysis.py
+3. src\\run\_all.sh
+
